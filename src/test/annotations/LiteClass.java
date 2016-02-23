@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by brandt on 2/18/16.
+ * All classes marked with this annotation will be scanned for tests.
+ * The default behavior of the TestDriver is to ignore all classes without
+ * this annotation, but that behavior can be overridden.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

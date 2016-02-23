@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by brandt on 2/18/16.
+ * All methods marked with annotation will be evaluated as candidates for
+ * testing. For such methods to actually be queued as tests, they must meet
+ * additional conditions as outlined in the TestDriver documentation.
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

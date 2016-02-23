@@ -42,7 +42,10 @@ public class LiteTarget {
                 File[] contents = currentFile.listFiles();
                 for (File dirMember : contents) {
                     String newSlashPath = slashPath + slash + dirMember.getName();
-                    String newDotPath = dotPath + "." + dirMember.getName().replaceFirst("[.][^.]+$", "");
+                    String newDotPath = dotPath;
+                    if(!dotPath.equals(""))
+                        newDotPath += ".";
+                    newDotPath += dirMember.getName().replaceFirst("[.][^.]+$", "");
                     if(dirMember.isDirectory() && !recurse)
                         continue;
                     scan(newSlashPath, newDotPath, discoveredTests);
@@ -70,13 +73,13 @@ public class LiteTarget {
 
 
     private boolean isJava(File toCheck){
-        return !toCheck.getName().contains("Lite") &&
-                toCheck.getName().contains(".java");
+        return toCheck.getName().contains(".java");
     }
 
     private boolean isTest(Class toCheck) {
-        return !requireClassAnnotation ||
-                toCheck.isAnnotationPresent(LiteClass.class);
+        return !toCheck.getName().contains("Lite") &&
+                (!requireClassAnnotation ||
+                toCheck.isAnnotationPresent(LiteClass.class));
     }
 
     private boolean isTest(Method toCheck) {

@@ -1,5 +1,12 @@
 package asserts;
 
+/**
+ * LiteAsserts provides a few of the standard assertions. It does this independent of the
+ * Assert class built into Java and JUnit. When these tests fail, they throw a LiteAssertFailedException.
+ * <br>
+ * All methods are run statically, so "import static LiteAsserts.*;" makes it easy to use the assertions.
+ * All methods have an overload that allows the user to include a message that is printed is the assertion fails.
+ */
 public class LiteAsserts {
 
     public static void assertTrue(boolean condition, String message) throws LiteAssertFailedException {
