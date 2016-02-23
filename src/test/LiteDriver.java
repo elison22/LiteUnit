@@ -23,21 +23,21 @@ public class LiteDriver {
     private String fullSrcPath;    // doesn't remove a leading slash
     private String localTestRoot;
     /**
-     * Default for whether or not to scan packages recursively
+     * false is the default for whether or not to scan packages recursively.
      */
-    private final boolean RECURSE_DEFAULT = false;
+    public final boolean RECURSE_DEFAULT = false;
     /**
-     * Default for whether or not to print the full stack trace in tests results
+     * false is the default for whether or not to print the full stack trace in tests results
      */
-    private final boolean FULL_TRACE_DEFAULT = false;
+    public final boolean FULL_TRACE_DEFAULT = false;
     /**
-     * Default for whether or not to print scan classes that are not marked with the @LiteClass annotation
+     * false is the default for whether or not to print scan classes that are not marked with the @LiteClass annotation
      */
-    private final boolean SCAN_NON_TEST_CLASS_DEFAULT = false;
+    public final boolean SCAN_NON_TEST_CLASS_DEFAULT = false;
     /**
-     * Default for whether target dot name from the testing root set up in the constructor
+     * "" is the default for the target starting at the testing root that was set up in the constructor originally
      */
-    private final String TARGET_DOT_NAME_DEFAULT = "";
+    public final String TARGET_DOT_NAME_DEFAULT = "";
     private char slash = File.separatorChar;
     private TreeSet<LiteTest> queuedTests;
     private boolean hasExecuted = false;
