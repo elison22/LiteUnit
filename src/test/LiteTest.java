@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class LiteTest implements Comparable<LiteTest> {
+class LiteTest implements Comparable<LiteTest> {
 
     Class testClass;
     Method testMethod;

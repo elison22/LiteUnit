@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by brandt on 2/20/16.
  */
-public class LiteTarget {
+class LiteTarget {
 
     private String fullSlashPath;
     private String localDotPath;
